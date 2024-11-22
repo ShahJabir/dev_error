@@ -8,6 +8,7 @@ import {
 import '@/app/globals.css';
 import type { Metadata } from 'next';
 import { inter } from '@/components/ui/fonts';
+import { ThemeProvider } from './../context/ThemeProvider';
 
 export const metadata: Metadata = {
     title:"Dev Error",
@@ -23,18 +24,22 @@ export default function RootLayout({
     children: React.ReactNode
   }) {
     return (
-      <ClerkProvider>
+
         <html lang="en">
           <body className={`${inter.className} antialiased`}>
+          <ClerkProvider>
             <SignedOut>
               <SignInButton />
             </SignedOut>
             <SignedIn>
               <UserButton />
             </SignedIn>
+            <ThemeProvider>
             {children}
+            </ThemeProvider>
+            </ClerkProvider>
           </body>
         </html>
-      </ClerkProvider>
+
     )
   }
