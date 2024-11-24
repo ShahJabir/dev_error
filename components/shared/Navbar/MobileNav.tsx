@@ -6,8 +6,7 @@ import { usePathname } from 'next/navigation';
 
 import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 
-import { Button } from '@/components/ui/button';
-import { Sheet, SheetTrigger, SheetContent, SheetClose } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { sidebarLinks } from '@/constants';
 
 const NavContent = () => {
@@ -59,9 +58,12 @@ const MobileNav = () => {
             className="invert-colors sm:hidden"
           />
         </SheetTrigger>
-        <SheetContent side="left" className="background-light900_dark200 border-none">
+        <SheetContent
+          side="left"
+          className="background-light900_dark200 border-none"
+        >
           {/* Logo Section */}
-          <Link href="/" className="flex items-center gap-1 mb-6">
+          <Link href="/" className="mb-6 flex items-center gap-1">
             <Image
               src="/assets/images/site-logo.svg"
               width={23}
@@ -87,7 +89,6 @@ const MobileNav = () => {
               }}
             />
           </SignedIn>
-
         </SheetContent>
       </Sheet>
     </div>
