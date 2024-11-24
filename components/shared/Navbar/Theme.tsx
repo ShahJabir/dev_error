@@ -29,7 +29,6 @@ const Theme = () => {
                 setMode(items.value);
               }}
             >
-{/*dark:bg-gray-500 focus:bg-slate-400*/}
               <Image
                 src={items.icon}
                 alt={items.value}

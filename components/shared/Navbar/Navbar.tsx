@@ -1,12 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import {
-    SignInButton,
-    SignedIn,
-    SignedOut,
-    UserButton,
-} from '@clerk/nextjs';
+import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
+
+// import MobileNav from './MobileNav';
+import GlobalSearch from '../Search/GlobalSearch';
 import MobileNav from './MobileNav';
 import Theme from './Theme';
 
@@ -21,11 +19,11 @@ const Navbar = () => {
             height={23}
             alt="DevError"
           />
-          <p className="h2-bold font-spaceGrotesk text-dark-100 dark:text-light-900 max-sm:hidden">
+          <p className="h2-bold text-dark100 font-spaceGrotesk dark:text-light-900 max-sm:hidden">
             Dev <span className="text-primary-500">Error</span>
           </p>
         </Link>
-        {/* GlobalSearch */}
+        <GlobalSearch />
         <div className="flex-between gap-5">
           <Theme />
           <SignedOut>
@@ -39,7 +37,7 @@ const Navbar = () => {
               }}
             />
           </SignedIn>
-          <MobileNav />
+          <MobileNav /> 
         </div>
       </nav>
     </>
